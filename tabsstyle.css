@@ -1,0 +1,71 @@
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+  width: 100%;
+  border: 1px solid #ddd;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+  margin-right: auto;
+  margin-left: auto;
+}
+
+th, td {
+  text-align: center;
+  padding: 16px;
+}
+table tbody tr {
+    border-bottom: 1px solid #dddddd;
+}
+table tbody tr:last-of-type {
+    border-bottom: 2px solid #dddddd;
+}
+table thead {
+  background-color: #fddcb2;
+    }
+table tr:hover:not(#trhead) {
+  background-color: #fee4b2;
+ }
+
+.td1 {
+  font-weight: bold;
+ }
+
+/*METADATA Al*/
+
+#myBtnContainer{
+  margin:0px 0px 30px 40px;
+}
+#myBtnContainer:after{
+  font-size: 13px;
+  color: #777;
+  float: right;
+  margin-right: 65px;
+}
+
+
+.btn {
+  border: none;
+  outline: none;
+  padding: 12px 16px;
+  cursor: pointer;
+}
+.btn:hover {
+  opacity:0.8;
+  background-color: #ddd;
+
+}
+
+.btn.active {
+   background-color: #666;
+}  
+
+.filterDiv {
+  display: none; /* Hidden by default */
+}
+
+/* The "show" class is added to the filtered elements */
+.show {
+  display: inline;
+}
+button {
+  border-radius:10px;
+}
