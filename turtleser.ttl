@@ -1,0 +1,110 @@
+base <https://w3id.org/alodturing>.
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
+@prefix dcterms: <http://purl.org/dc/terms/>.
+@prefix crm: <http://www.cidoc-crm.org/cidoc-crm/>.
+@prefix eac-cpf: <http://archivi.ibc.regione.emilia-romagna.it/ontology/eac-cpf/>.
+@prefix frbr: <http://purl.org/vocab/frbr/core>.
+@prefix owl: <http://www.w3.org/2002/07/owl#>. 
+@prefix time: <http://www.w3.org/2006/time#>.
+@prefix schema: <http://schema.org/>.
+@prefix dbpedia-owl: <http://dbpedia.org/ontology/>.
+
+<https://w3id.org/alodturing/item/photo-bletchley-park> a crm:E22_Human-Made_Object ; 
+	rdfs:label "Photograph of Bletchley Park" ;
+	owl:sameAs <http://www.gettyimages.com/detail/3066353> ;  #URI for 'Photograph of Bletchley Park'
+	crm:P62_Depicts <https://w3id.org/alodturing/place/bletchley-park> ;
+	dcterms:creator  <http://viaf.org/viaf/315697624> ; #URI for 'Evening Standard'
+	frbr:ResponsibleEntity <http://viaf.org/viaf/151544970> ; #URI for 'Getty Images'
+	dcterms:isPartOf <http://viaf.org/viaf/158601469>; #URI for 'Hulton Archive'
+	dcterms:created <https://w3id.org/alodturing/date/7january1926> . 
+	
+<https://w3id.org/alodturing/place/bletchley-park> a crm:E53_Place ; 
+	rdfs:label "Bletchley Park" ; 
+	owl:sameAs	<https://sws.geonames.org/8468728/> ; 
+	crm:P53_has_former_or_current_location <https://w3id.org/alodturing/group/GCCS> ;
+	crm:P53_has_former_or_current_location <https://w3id.org/alodturing/institution/national-museum-computing-bletchley-park> .
+
+<https://w3id.org/alodturing/date/7january1926> a time:DateTime ;
+	rdfs:label "7th January 1926" .
+
+<https://w3id.org/alodturing/group/GCCS> a crm:E74_Group ; 
+	rdfs:label "Government Code and Cypher School" ;
+	owl:sameAs <http://viaf.org/viaf/157353394> ;
+	crm:P107_has_current_or_former_member <http://viaf.org/viaf/27602074> ; #URI for 'Hugh Alexander' 
+	crm:P107_has_current_or_former_member <http://viaf.org/viaf/291601053> ;  #URI for 'Stuart Milner-Barry'
+	dcterms:relation <https://w3id.org/alodturing/item/enigma-machine> .
+
+<https://w3id.org/alodturing/institution/national-museum-computing-bletchley-park> a schema:Museum ; 
+	rdfs:label "The National Museum of Computing at Bletchley Park" ;
+	owl:sameAs <http://viaf.org/viaf/258028354> ; #URI for National Museum of Computing
+	dcterms:spatial <https://w3id.org/alodturing/object/alan-turing-statue> .
+
+<https://w3id.org/alodturing/object/alan-turing-statue> a crm:E22_Human-Made_Object ; 
+	rdfs:label "Alan Turing Statue" ;
+	owl:sameAs <https://www.geograph.org.uk/photo/5111917> ; 
+	dcterms:subject <https://w3id.org/alodturing/person/alan-turing> .
+
+<https://w3id.org/alodturing/person/alan-turing> a crm:E21_Person ; 
+	rdfs:label "Alan Turing" ;
+	owl:sameAs <http://viaf.org/viaf/41887917> ; #URI for 'Alan Turing'
+	dbpedia-owl:birthDate <https://w3id.org/alodturing/date/23june1912> ;
+	dbpedia-owl:deathDate <https://w3id.org/alodturing/date/7june1954> ;
+	schema:alumniOf <https://w3id.org/alodturing/institution/university-cambridge> ; 
+	dcterms:relation <https://w3id.org/alodturing/item/enigma-machine> ;
+	crm:P107_has_current_or_former_member <https://w3id.org/alodturing/group/GCCS> ; 
+	dcterms:spatial <https://w3id.org/alodturing/place/bletchley-park> ;
+	schema:employee <http://viaf.org/viaf/137303360> .  #URI for 'University of Manchester'
+
+<https://w3id.org/alodturing/date/23june1912> a time:DateTime ;
+	rdfs:label "Alan Turing Birth Date" .
+
+<https://w3id.org/alodturing/date/7june1954> a time:DateTime ;
+	rdfs:label "Alan Turing Death Date" .
+
+<https://w3id.org/alodturing/institution/university-cambridge> a dbpedia-owl:University ; 
+	rdfs:label "University of Cambridge" ;
+	owl:sameAs <http://viaf.org/viaf/153568718> .
+
+<https://w3id.org/alodturing/item/treatise-enigma> a crm:E24_Physical_Human-Made_Thing ; 
+	rdfs:label "Treatise on the Enigma" ;
+	owl:sameAs <https://discovery.nationalarchives.gov.uk/details/r/0ae1a064-ccc7-4b2a-945a-de5180d8d6c7> ;
+	owl:sameAs <https://archive.org/details/hw-25-3/mode/2up> ;
+	eac-cpf:languageUsed <http://vocab.getty.edu/page/aat/300388027> ; #URI British English from Getty
+	crm:P53_has_former_or_current_location <https://w3id.org/alodturing/institution/kings-college-archive-centre> ;
+	dcterms:type <http://vocab.getty.edu/page/aat/300028577> ; #URI 'photocopied typescript' from Getty
+	dcterms:created <https://w3id.org/alodturing/date/1939-1942> ; 
+	dcterms:subject <https://w3id.org/alodturing/item/enigma-machine> ; 
+	dcterms:creator <https://w3id.org/alodturing/person/alan-turing> . 
+
+<https://w3id.org/alodturing/institution/kings-college-archive-centre> a eac-cpf:entity ; 
+	rdfs:label "King’s College Archive Centre" ;
+	owl:sameAs <http://viaf.org/viaf/138520829> ; 
+	dcterms:isPartOf <https://w3id.org/alodturing/institution/university-cambridge> . 
+
+<https://w3id.org/alodturing/date/1939-1942> a dcterms:PeriodOfTime ; 
+	rdfs:label "c.1939-c.1942" ;
+	crm:P10_falls_within <https://w3id.org/alodturing/event/world-war-ii> . 
+
+<https://w3id.org/alodturing/event/world-war-ii> a crm:E5_Event ; 
+	rdfs:label "World War II" .
+
+<https://w3id.org/alodturing/item/enigma-machine> a crm:E24_Physical_Human-Made_Thing ; 
+	rdfs:label "Three-ring Enigma cypher machine" ;
+	owl:sameAs <https://collection.sciencemuseumgroup.org.uk/objects/co35752/three-ring-enigma-cypher-machine-in-oak-wood-transit-case-cipher-machine> ;
+	crm:P53_has_former_or_current_location <https://w3id.org/alodturing/place/germany> ;
+	dcterms:type <https://w3id.org/alodturing/object/cypher-machine> ; 
+	dcterms:creator <http://viaf.org/viaf/188182718> ; #URI for 'Arthur Scherbius'
+	dcterms:created <https://w3id.org/alodturing/date/1934> ;
+	crm:P45_consists_of <http://vocab.getty.edu/page/aat/300404821> . #URI for Mixed Materials Getty
+
+<https://w3id.org/alodturing/place/germany> a crm:E53_Place ; 
+	rdfs:label "Germany" ;
+	owl:sameAs <https://sws.geonames.org/2921044/> ;
+	crm:P11_had_participant <https://w3id.org/alodturing/event/wordl-war-ii> . 
+
+<https://w3id.org/alodturing/object/cypher-machine> a crm:E22_Human-Made_Object ; 
+	rdfs:label "Cypher machine" ;
+	dcterms:relation <http://vocab.getty.edu/page/aat/300389758> .  #URI for 'cryptography'
+
+<https://w3id.org/alodturing/date/1934> a time:Year ; 
+	rdfs:label "1934" .
