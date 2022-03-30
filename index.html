@@ -145,9 +145,344 @@
                         <h2 id="erm" class="sectitle" style="font-size: 20pt;">E/R Model</h2>
                             <img src="maps/ERModel.jpg" alt="E/R Model" style="max-width:100%;max-height:100%;">
                         <h2 id="man" class="sectitle" style="font-size: 20pt;">Metadata Analysis</h2>
-                            <!-- Table here -->
+                            <!-- Below the table for the metadata analysis -->
+                            <table class="tab_meta_align">
+                                <thead>
+                                <tr id="trhead">
+                                    <th>Item</th>
+                                    <th>Item Type</th>
+                                    <th>Provider</th>
+                                    <th>Metadata Standard</th>
+                                </tr>
+                                </thead>
+                                <tr>
+                                    <td class="td1">Treatise on Enigma</td>
+                                    <td>Text</td>
+                                    <td>The National Archives</td>
+                                    <td>EAD</td>
+                                </tr>
+                                <tr>
+                                    <td class="td1">Three-ring Enigma machine</td>
+                                    <td>Object</td>
+                                    <td>Mathematics: The Winton Gallery (Science Museum Group) </td>
+                                    <td>CDWA CCO</td>
+                                </tr>
+                                <tr>
+                                    <td class="td1">Breaking the code</td>
+                                    <td>Movie</td>
+                                    <td>Princeton University Library</td>
+                                    <td>MARC21</td>
+                                </tr>
+                                <tr>
+                                    <td class="td1">Enigma:la strana vita di Alan Turing</td>
+                                    <td>Text</td>
+                                    <td>OPAC SBN</td>
+                                    <td>MARC21</td>
+                                </tr>
+                                <tr>
+                                    <td class="td1">Alan Turing's 100th Birthday Doodle</td>
+                                    <td>Digital Art</td>
+                                    <td>Google Doodle Archive</td>
+                                    <td>Schema.org</td>
+                                </tr>
+                                <tr>
+                                    <td class="td1">Alan Turing Centenary Conference</td>
+                                    <td>Video</td>
+                                    <td>University of Manchester/Videolectures.net</td>
+                                    <td>Dublin Core</td>
+                                </tr>
+                                <tr>
+                                    <td class="td1">Photograph of Bletchley Park</td>
+                                    <td>Object</td>
+                                    <td>Getty Images Archive</td>
+                                    <td>CDWA CCO</td>
+                                </tr>
+                                <tr>
+                                    <td class="td1">Portrait of Alan Turing</td>
+                                    <td>Object</td>
+                                    <td>National Portrait Gallery</td>
+                                    <td>CDWA CCO</td>
+                                </tr>
+                                <tr>
+                                    <td class="td1">Alan Turing Blue Plaque</td>
+                                    <td>Object</td>
+                                    <td>English Heritage</td>
+                                    <td>MIDAS</td>
+                                </tr>
+                                <tr>
+                                    <td class="td1">The Imitation Game: Original Motion Picture Soundtrack</td>
+                                    <td>Audio</td>
+                                    <td>OPAC SBN</td>
+                                    <td>MARC21</td>
+                                </tr>
+                            </table>
                         <h2 id="mal" class="sectitle" style="font-size: 20pt;">Metadata Alignment</h2>
-                            <!-- Table here-->
+                            <!-- Below the metadata alignment table -->
+                            <div id="myBtnContainer"> <!-- Buttons for the filtering with the 4W-->
+                                <button class="btn active" onclick="filterSelection('who')" id="who"><img src="table/who1.jpg" style="max-height: 40px;"></button>
+                                <button class="btn" onclick="filterSelection('what')" id="what"><img src="table/what1.jpg" style="max-height: 40px;"></button>
+                                <button class="btn" onclick="filterSelection('when')" id="when"><img src="table/where1.jpg"style="max-height: 40px;"></button>
+                                <button class="btn" onclick="filterSelection('where')" id="where" ><img src="table/when1.jpg" style="max-height: 40px;"></button>
+                            </div>
+                            <div class="filterDiv who"> <!-- WHO CONTENT -->
+                                <table id="who">
+                                    <thead>
+                                        <tr id="trhead">
+                                            <th>Property</th>
+                                            <th>Dublin Core</th>
+                                            <th>Schema.org</th>
+                                            <th>MARC21</th>
+                                            <th>EAD</th>
+                                            <th>CCO (CDWA*)</th>
+                                            <th>MIDAS</th>
+                                        </tr>
+                                    </thead>
+                                    <tr>
+                                        <td class="td1">Creator</td>
+                                        <td>dcterms:creator</td>
+                                        <td>author, creator, producer, composer, director</td>
+                                        <td>100</td>
+                                        <td>&lt; author &gt;, &lt;origination&gt;</td>
+                                        <td>Creator Display (specify Creator Extent, Creator Role)</td>
+                                        <td>Person Name, Organization Name (specify Role)</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="td1">Contributor</td>
+                                        <td>dcterms:contributor</td>
+                                        <td>contributor</td>
+                                        <td>511</td>
+                                        <td>N/A</td>
+                                        <td>Creator Display (specify Creator Extent, Creator Role)</td>
+                                        <td>Person Name, Organization Name (specify Role)</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="td1">Ownership record</td>
+                                        <td>dcterms:provenance</td>
+                                        <td>N/A</td>
+                                        <td>6xx, 0xx</td>
+                                        <td>&lt;acqinfo&gt;</td>
+                                        <td>* 23. Ownership/Collecting History, 23.1.Provenance Description, 23.1.1 Aquisition Description  </td>
+                                        <td>N/A</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="td1">Publisher</td>
+                                        <td>dcterms:publisher</td>
+                                        <td>publisher</td>
+                                        <td>260$b, 264b, 710</td>
+                                        <td>&lt;publisher&gt;</td>
+                                        <td>N/A</td>
+                                        <td>N/A</td>
+                                    </tr>
+                                </table>
+                            </div>
+                            <div class="filterDiv what"> <!-- WHAT CONTENT -->
+                                <table id="what">
+                                    <thead>
+                                        <tr id="trhead">
+                                            <th>Property</th>
+                                            <th>Dublin Core</th>
+                                            <th>Schema.org</th>
+                                            <th>MARC21</th>
+                                            <th>EAD</th>
+                                            <th>CCO (CDWA*)</th>
+                                            <th>MIDAS</th>
+                                        </tr>
+                                    </thead>
+                                    <tr>
+                                        <td class="td1">Comments</td>
+                                        <td>N/A</td>
+                                        <td>N/A</td>
+                                        <td>5xx</td>
+                                        <td>&lt;note&gt;</td>
+                                        <td>Remarks</td>
+                                        <td>N/A</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="td1">Description</td>
+                                        <td>dcterms:description</td>
+                                        <td>description</td>
+                                        <td>520</td>
+                                        <td>&lt;archdesc&gt;</td>
+                                        <td>Description</td>
+                                        <td>Description (** Inscription Content)</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="td1">Event </td>
+                                        <td>dcterms:event</td>
+                                        <td>event, recordedAt</td>
+                                        <td>N/A</td>
+                                        <td>&lt;event&gt;</td>
+                                        <td>* 17. Context, 17.1. Historical/Cultural Events </td>
+                                        <td>Historical Event</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="td1">Format</td>
+                                        <td>dcterms:format, dcterms:extent</td>
+                                        <td>encodingFormat?</td>
+                                        <td>007/00=c, 256</td>
+                                        <td>N/A</td>
+                                        <td>Format</td>
+                                        <td>N/A</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Identifier</td>
+                                        <td>dcterms:identifier</td>
+                                        <td>identifier</td>
+                                        <td>001, 02x</td>
+                                        <td>&lt;eadid&gt;, &lt;archref&gt; </td>
+                                        <td>* 21.2.3. Repository Number</td>
+                                        <td>Primary Reference Number</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="td1">Language</td>
+                                        <td>dcterms:language</td>
+                                        <td>inLanguage</td>
+                                        <td>041</td>
+                                        <td>&lt;language&gt;</td>
+                                        <td>Language</td>
+                                        <td>Language</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="td1">Physical Description</td>
+                                        <td>dcterms:format, dcterms:medium</td>
+                                        <td>material, materialExtent </td>
+                                        <td>007, 3xx</td>
+                                        <td>&lt;filedesc&gt;, &lt;physdesc&gt;, &lt;dimensions&gt;</td>
+                                        <td>Physical Description, Measurements Display</td>
+                                        <td>Material, Archive/Source Format</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="td1">Subject</td>
+                                        <td>dcterms:subject</td>
+                                        <td>about</td>
+                                        <td>6xx</td>
+                                        <td>&lt;subject&gt;</td>
+                                        <td>Subject Display, Subject</td>
+                                        <td>Subject</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="td1">Type</td>
+                                        <td>dcterms:type</td>
+                                        <td>additionalType, category</td>
+                                        <td>008, 336</td>
+                                        <td>&lt;genreform&gt;</td>
+                                        <td>Work Type</td>
+                                        <td>Artefact Name Type, Production Technique</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="td1">Title</td>
+                                        <td>dcterms:title</td>
+                                        <td>name</td>
+                                        <td>240</td>
+                                        <td>&lt;title&gt;</td>
+                                        <td>Title</td>
+                                        <td>Information Source Title</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="td1">Title Variant</td>
+                                        <td>dcterms:alternative</td>
+                                        <td>alternateName</td>
+                                        <td>246</td>
+                                        <td>N/A</td>
+                                        <td>* 3.3 Preference (for preferred alternative form of the title name)</td>
+                                        <td>N/A</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="td1">Rights</td>
+                                        <td>dcterms:rights</td>
+                                        <td>license</td>
+                                        <td>017, 540</td>
+                                        <td>&lt;userestrict&gt;</td>
+                                        <td>* 22.1. Copyrights Satement</td>
+                                        <td>Right Note</td>
+                                    </tr>
+                                </table>
+                            </div>  
+                            <div class="filterDiv when">  <!-- WHEN CONTENT -->
+                                <table id="when">
+                                    <thead>
+                                        <tr id="trhead">
+                                            <th>Property</th>
+                                            <th>Dublin Core</th>
+                                            <th>Schema.org</th>
+                                            <th>MARC21</th>
+                                            <th>EAD</th>
+                                            <th>CCO (CDWA*)</th>
+                                            <th>MIDAS</th>
+                                        </tr>
+                                    </thead>
+                                    <tr>
+                                        <td class="td1">Creation Date</td>
+                                        <td>dcterms:created</td>
+                                        <td>dateCreated</td>
+                                        <td>264$c, 388</td>
+                                        <td>&lt;unitdate&gt;</td>
+                                        <td>Display Date</td>
+                                        <td>Display Date</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="td1">Publication Date</td>
+                                        <td>dcterms:available</td>
+                                        <td>datePublished, releasedEvent</td>
+                                        <td>260 $c, 264 $c</td>
+                                        <td>&lt;date&gt;</td>
+                                        <td>N/A</td>
+                                        <td>N/A</td>
+                                    </tr>
+                                </table>
+                            </div>
+                            <div class="filterDiv where">  <!-- WHERE CONTENT -->
+                                <table id="where">
+                                    <thead>
+                                        <tr id="trhead">
+                                            <th>Property</th>
+                                            <th>Dublin Core</th>
+                                            <th>Schema.org</th>
+                                            <th>MARC21</th>
+                                            <th>EAD</th>
+                                            <th>CCO (CDWA*)</th>
+                                            <th>MIDAS</th>
+                                        </tr>
+                                    </thead>
+                                    <tr>
+                                        <td class="td1">Location</td>
+                                        <td>dcterms:spatial</td>
+                                        <td>spatial</td>
+                                        <td>852</td>
+                                        <td>&lt;phisloc&gt;</td>
+                                        <td>Current Location</td>
+                                        <td>Storage Location</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="td1">Creation/Publication Location</td>
+                                        <td>N/A</td>
+                                        <td>countryOfOrigin, locationCreated</td>
+                                        <td>260 $a, 264 $a</td>
+                                        <td>&lt;originalsloc&gt;</td>
+                                        <td>Creation Location</td>
+                                        <td>Locality, Named Location</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="td1">Collection/Part Of</td>
+                                        <td>dcterms:isPartOf</td>
+                                        <td>isPartOf</td>
+                                        <td>830, 852 $b</td>
+                                        <td>N/A</td>
+                                        <td>* 20.2. Work Broader Context</td>
+                                        <td>N/A</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="td1">Depicted Location</td>
+                                        <td>dcterms:subject</td>
+                                        <td>contentLocation</td>
+                                        <td>N/A</td>
+                                        <td>&lt;subject&gt;</td>
+                                        <td>Subject Display, Subject</td>
+                                        <td>Subject</td>
+                                    </tr>
+                                </table>
+                            </div>
+                            <!-- END of the metadata alignment table -->
                         <h2 id="tm" class="sectitle" style="font-size: 20pt;">Theoretical Model</h2>
                             <img src="maps/TheoreticalModel.jpg" alt="Theoretical Model" style="max-width:100%;max-height:100%;">
                         <h2 id="cm" class="sectitle" style="font-size: 20pt;">Conceptual Model</h2>
@@ -200,7 +535,11 @@
         <div class="parallax4"></div>
         <!-- Footer-->
         <footer class="py-5 bg-dark">
-            <div class="container px-4"><p class="m-0 text-center text-white">&copy;ALOD Turing, 2022 <br> "Knowledge Organisation and Cultural Heritage" (DHDK) - University of Bologna <br> <a href="https://creativecommons.org/licenses/by-nc/4.0/">Licence Creative Commons 4.0</a><br> <i>It would be nice to put Alan Turing's svg signature in this part</i>
+            <div class="container px-4"><p class="m-0 text-center text-white">&copy;ALOD Turing, 2022 <br> 
+                <img src="imgpx/signature.svg" alt="Alan Turing svg signature" class="invertsignature"><br>
+                "Knowledge Organisation and Cultural Heritage" (DHDK) - University of Bologna <br>
+                <a href="https://creativecommons.org/licenses/by-nc/4.0/">Licence Creative Commons 4.0</a><br>
+                <i>It would be nice to put Alan Turing's svg signature in this part</i>
             </p></div>
         </footer>
         <!-- Bootstrap core JS-->
